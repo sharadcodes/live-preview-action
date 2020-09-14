@@ -1,5 +1,12 @@
-# Live Preview Action
-An action that enables you to live preview your app from your github workflow without deploying by exposing local web server to internet.
+![](https://dev-to-uploads.s3.amazonaws.com/i/3glw7hiaf03rgva5kvix.jpeg)
+
+<h1 align="center">Live Preview Github Action</h1>
+
+An action that enables you to **live preview your app** from your github workflow **without deploying** by exposing local web server to internet.
+
+## Usage
+
+You need to add a discord webhook as a secret in the repo before proceeding further.
 
 To use this action you can see the following sample:
 
@@ -24,3 +31,8 @@ jobs:
         discord_webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
         # A required field, and it will be used to send the URL for the exposed port
 ```
+
+---
+
+###### Other info
+> Behind the scenes it uses [ngrok](https://github.com/inconshreveable/ngrok) which is an awesome tool and a must have for every developer.
