@@ -1,0 +1,32 @@
+name: 'Live Preview Action'
+description: 'An action that enables you to live preview your app from your github workflow without deploying by exposing local web server to internet.'
+branding:
+  icon: 'globe'
+  color: 'red'
+inputs:
+  port:
+    description: 'The port at which the server is running'
+    required: true
+  minutes:
+    description: 'Duration in minutes for the server to be exposed'
+    required: false
+    default: 5
+  command:
+    description: 'Command for building or starting server or installing packages and then starting server, use && to run multiple commands'
+    required: true
+  discord_webhook_url:
+    description: 'Discord webhook url'
+    required: true
+runs:
+  using: "composite"
+  steps: 
+    - run: echo "::set-env name=INPUT_PORT::${{ inputs.port }}"
+      shell: bash
+    - run: echo "::set-env name=INPUT_MINUTES::${{ inputs.minutes }}"
+      shell: bash
+    - run: echo "::set-env name=INPUT_COMMAND::${{ inputs.command }}"
+      shell: bash
+    - run: echo "::set-env name=INPUT_DISCORD_WEBHOOK_URL::${{ inputs.discord_webhook_url }}"
+      shell: bash
+    - run: "npm install @actions/core node-fetch ngrok && node index.js"
+      shell: bash
