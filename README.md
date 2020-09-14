@@ -7,9 +7,9 @@ To use this action you can see the following sample:
 on: [push]
 
 jobs:
-  test_ngrok_job:
+  live_preview_job:
     runs-on: ubuntu-latest
-    name: A job to test ngrok action
+    name: A job to test live preview
     steps:
     - uses: actions/checkout@master
       name: Checkout
