@@ -21,7 +21,7 @@ jobs:
     - uses: actions/checkout@master
       name: Checkout
     - name: My Live Preview Action for port 5000
-      uses: sharadcodes/live-preview-action@v0.1
+      uses: sharadcodes/live-preview-action@v1.0
       with:
         port: 5000 # A required field, this port will be exposed
         minutes: 1 # A required field, after the minutes specified here the server will stop
