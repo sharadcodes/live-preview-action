@@ -31,8 +31,3 @@ jobs:
         discord_webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
         # A required field, and it will be used to send the URL for the exposed port
 ```
-
----
-
-###### Other info
-> Behind the scenes it uses [ngrok](https://github.com/inconshreveable/ngrok) which is an awesome tool and a must have for every developer.
